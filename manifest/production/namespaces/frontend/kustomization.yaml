@@ -3,3 +3,5 @@ kind: Kustomization
 namespace: frontend
 resources:
   - namespace.yaml
+  - webapp
+  - ../../module/dockerhub-secret.yaml
