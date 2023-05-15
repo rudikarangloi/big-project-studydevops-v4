@@ -4,4 +4,4 @@ namespace: frontend
 resources:
   - namespace.yaml
   - webapp
-  # - ../../module/dockerhub-secret.yaml
+  - ../../module/dockerhub-secret.yaml
