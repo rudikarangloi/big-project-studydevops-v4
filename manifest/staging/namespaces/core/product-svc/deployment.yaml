@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-svc
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: product-svc
+  template:
+    metadata:
+      labels:
+        app: product-svc
+    spec:
+      containers:
+      - name: product-svc
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+          requests:
+            memory: "128Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - mountPath: /config
+            name: product-secret
+      volumes:
+        - name: product-secret
+          secret:
+            secretName: product-secret
