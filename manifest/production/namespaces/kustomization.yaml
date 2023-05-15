@@ -6,3 +6,4 @@ resources:
   - tools
   - frontend
   - monitoring
+  - ingress
