@@ -4,5 +4,5 @@ namespace: ingress
 resources:
   - namespace.yaml
   - ../../../../helm/ingress-nginx/repository.yaml
-  # - ingress-nginx
+  - ingress-nginx
   # - test-melawikab-go-id.yaml
