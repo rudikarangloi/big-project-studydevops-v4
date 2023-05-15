@@ -12,12 +12,12 @@ spec:
       labels:
         app: webapp
     spec:
-      # imagePullSecrets:
-      # - name: dockerhub-secret
+      imagePullSecrets:
+      - name: dockerhub-secret
       containers:
       - name: webapp
-        # image: rudicatsmile2/belajar-cicd:1 # {"$imagepolicy": "flux-system:webapp"} ....
-        image: rudicatsmile2/biodata-webapp:1 # {"$imagepolicy": "flux-system:webapp"} ....
+        image: rudicatsmile2/belajar-cicd:1 # {"$imagepolicy": "flux-system:webapp"} ....
+        # image: rudicatsmile2/biodata-webapp:1 # {"$imagepolicy": "flux-system:webapp"} ....
         resources:
           limits:
             memory: "128Mi"
