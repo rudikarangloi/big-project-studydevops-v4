@@ -1,0 +1,54 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-melawikab-go-id
+  labels:
+    name: test-melawikab-go-id
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  #   cert-manager.io/cluster-issuer: letsencrypt-production
+spec:
+  rules:
+  - host: test.melawikab.go.id
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: webapp    
+            port: 
+              number: 3000           
+      - pathType: Prefix
+        path: "/simpleapp"
+        backend:
+          service:
+            name: simpleapp
+            port: 
+              number: 8000
+#   tls:
+#   - hosts:
+#     - test.melawikab.go.id
+#     secretName: letsencrypt-production-ingress
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+spec:
+  type: ExternalName
+  externalName: webapp.frontend.svc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simpleapp
+spec:
+  type: ExternalName
+  externalName: simpleapp.core.svc
+
+# Catatan :
+# 1. Baris 20 {name: webapp} merefer ke servis yg dibawahnya => name: webapp
+# 2. Baris 29 {number: 8000} merefer pada namespaces/frontend/webapp/services.yaml {baris 9}
+# 3. Baris 41 {externalName: webapp.frontend.svc} => namespace frontend and service webapp atau frontend/webapp

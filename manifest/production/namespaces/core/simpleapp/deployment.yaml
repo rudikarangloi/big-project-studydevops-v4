@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp
+  name: simpleapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: webapp
+      app: simpleapp
   template:
     metadata:
       labels:
-        app: webapp
+        app: simpleapp
     spec:
       # imagePullSecrets:
-      # - name: dockerhub-secret
+      # - name: dockerhub-secret   
       containers:
-      - name: webapp
-        image: rudicatsmile2/belajar-cicd:1 # {"$imagepolicy": "flux-system:webapp"} ....
-        # image: rudicatsmile2/biodata-webapp:1 # {"$imagepolicy": "flux-system:webapp"} ....
+      - name: simpleapp
+        image: rudicatsmile2/biodata-webapp:1 # {"$imagepolicy": "flux-system:simpleapp"} ....
         resources:
           limits:
             memory: "128Mi"
