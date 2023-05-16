@@ -16,12 +16,7 @@ spec:
       # - name: dockerhub-secret
       containers:
       - name: webapp
-<<<<<<< HEAD
         image: rudicatsmile2/webapp:7 # {"$imagepolicy": "flux-system:webapp"}                 
-=======
-        # image: rudicatsmile2/belajar-cicd:1 # {"$imagepolicy": "flux-system:webapp"}     
-        image: rudicatsmile2/webapp:7 # {"$imagepolicy": "flux-system:webapp"}    
->>>>>>> d53f65e658dc4d203e5b5bcf6e45d2bad8a74d68
         resources:
           limits:
             memory: "128Mi"
