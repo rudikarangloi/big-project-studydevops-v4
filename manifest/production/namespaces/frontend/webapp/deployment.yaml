@@ -17,7 +17,7 @@ spec:
       containers:
       - name: webapp
         # image: rudicatsmile2/belajar-cicd:1 # {"$imagepolicy": "flux-system:webapp"}     
-        image: rudicatsmile2/webapp:5 # {"$imagepolicy": "flux-system:webapp"}    
+        image: rudicatsmile2/webapp:6 # {"$imagepolicy": "flux-system:webapp"}    
         resources:
           limits:
             memory: "128Mi"
