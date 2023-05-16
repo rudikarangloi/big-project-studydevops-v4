@@ -10,14 +10,14 @@ spec:
   git:
     checkout:
       ref:
-        branch: main
+        branch: master
     commit:
       author:
         email: rudi.catsmile2@gmail.com
         name: Robot FluxCD
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
-      branch: main
+      branch: master
   update:
     path: ./manifest/production/namespaces
     strategy: Setters
