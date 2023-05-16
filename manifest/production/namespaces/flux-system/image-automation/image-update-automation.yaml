@@ -14,7 +14,7 @@ spec:
     commit:
       author:
         email: rudi.catsmile2@gmail.com
-        name: Robot FluxCD
+        name: Automation by FluxCD
       messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
     push:
       branch: master
