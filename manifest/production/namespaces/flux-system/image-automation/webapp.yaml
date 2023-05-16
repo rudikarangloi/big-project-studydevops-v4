@@ -1,0 +1,21 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: webapp
+spec:
+  # image: rudicatsmile2/simple-webapp
+  image: rudicatsmile2/belajar-cicd
+  interval: 1m0s
+  # secretRef:
+  #   name: dockerhub-secret
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: webapp
+spec:
+  imageRepositoryRef:
+    name: webapp
+  policy:
+    numerical:
+      order: asc
