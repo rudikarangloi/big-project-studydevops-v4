@@ -3,7 +3,7 @@ kind: ImageRepository
 metadata:
   name: webapp
 spec:
-  image: rudicatsmile2/belajar-cicd
+  image: rudicatsmile2/webapp 
   interval: 1m0s
   # secretRef:
   #   name: dockerhub-secret
