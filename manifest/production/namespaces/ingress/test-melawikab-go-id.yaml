@@ -27,6 +27,13 @@ spec:
             name: simpleapp
             port: 
               number: 8000
+      - pathType: Prefix
+        path: "/grafana"
+        backend:
+          service:
+            name: grafana
+            port: 
+              number: 3000
   tls:
   - hosts:
     - test.melawikab.go.id
@@ -47,6 +54,14 @@ metadata:
 spec:
   type: ExternalName
   externalName: simpleapp.core.svc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+spec:
+  type: ExternalName
+  externalName: grafana.tools.svc
 
 # Catatan :
 # 1. Baris 20 {name: webapp} merefer ke servis yg dibawahnya => name: webapp
